@@ -4,6 +4,27 @@ import { Profile, Photos, Cocktails, Pokemon} from '../components/Pages.js'
 
 class MainBox extends React.Component {
 
+  state = {
+    selection: "profile"
+  }
+
+  changePage = (event) => {
+    this.setState({
+      selection: event.target.id
+    })
+  }
+
+  displayPage = () => {
+    if (this.state.selection === "profile") {
+      return <Profile />
+    } else if (this.state.selection === "photo") {
+      return <Photos />
+    } else if (this.state.selection === "cocktail") {
+      return <Cocktails />
+    } else if (this.state.selection === "pokemon") {
+      return <Pokemon />
+    }
+  }
 
   render() {
 
@@ -17,8 +38,8 @@ class MainBox extends React.Component {
 
     return (
       <div>
-        <MenuBar />
-        {detailsToDisplay}
+        <MenuBar handleClick={this.changePage}/>
+        {this.displayPage()}
       </div>
     )
   }
