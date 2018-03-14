@@ -1,10 +1,16 @@
 import React from 'react'
 
+// const handleClick = (event) => {
+//   console.log(event.target.id);
+//   let id = event.target.id
+//   this.props.handleClick(id)
+// }
+
 const MenuBar = (props) => {
 
   /*
 
-  The 'a' tags below are the menu items. Think about the way a menu 
+  The 'a' tags below are the menu items. Think about the way a menu
   should work. When you click a menu item, the button typically becomes
   'active' to indicate that it is currently selected. How could we achieve
   this programatically? What other behavior do we expect when we click
@@ -13,22 +19,25 @@ const MenuBar = (props) => {
 
   */
 
+
+
+
   return (
-    <div className="ui four item menu">
-      <a className="item active" id="profile">
+    <div className="ui four item menu" onClick={props.handleClick}>
+      <a className="item active" id="profile" >
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
+      <a className="item" id="photo" onClick={props.handleClick}>
+        <i className="photo large icon" id="photo" />
       </a>
 
-      <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
+      <a className="item" id="cocktail" onClick={props.handleClick}>
+        <i className="cocktail large icon" id="cocktail" />
       </a>
 
-      <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
+      <a className="item" id="pokemon" onClick={props.handleClick}>
+        <i className=" themeisle large icon" id="pokemon" />
       </a>
     </div>
   )
